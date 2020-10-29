@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,7 +17,6 @@ import { AuthRouter } from './AuthRouter';
 import SideBar from '../components/ui/SideBar';
 
 
-const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,17 +33,30 @@ const useStyles = makeStyles((theme) => ({
 export const AppRouter = () => {
 
     const classes = useStyles();
+    const [open, setOpen] = useState(true);
+
+    const handleToggle = () =>{
+        setOpen(!open);
+    }
 
     return (
         <Router>
             <div className={classes.root} >
-                <Navbar/>
+                <Navbar handleToggle={handleToggle}/>
                 <Hidden xsDown>
-                    <SideBar/>
+                    <SideBar variant="permanent"
+                             open={true}
+                    />
                 </Hidden>
+                <Hidden smUp>
+                    <SideBar variant="temporary"
+                             open={open}
+                             onClose={handleToggle}
+                    />
+                </Hidden>
+
                 <div className={classes.content}>
                     <div className={classes.toolbar}></div>
-                    Hola
                         <Switch >
                             <Route path="/auth" component={AuthRouter} />
                             <Route exact path="/" component={HomeScreen} />
