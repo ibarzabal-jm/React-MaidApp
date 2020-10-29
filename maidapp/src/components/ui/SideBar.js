@@ -6,27 +6,31 @@ import {
 } from '@material-ui/core'
 import { ListSideBar } from './ListSideBar';
 
+const drawerWidth = 240;
+
 const estilos = makeStyles( theme =>({
     drawer: {
-        width: 240,
+        width: drawerWidth,
         flexShrink: 0,
     },
     drawerPaper:{
-        width: 240,
+        width: drawerWidth,
     },
     toolbar: theme.mixins.toolbar
 }))
 
-const SideBar = () => {
+const SideBar = (props) => {
 
     const classes = estilos();
 
     return (
         <Drawer
-            variant="permanent"
             anchor="left"
             className={classes.drawer}
             classes={{ paper: classes.drawerPaper}}
+            variant={props.variant}
+            open={props.open}
+            onClose={ props.onClose ? props.onClose : null}
         >
           <div className={classes.toolbar}/>
           <Divider />
