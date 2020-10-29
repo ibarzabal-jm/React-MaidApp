@@ -2,14 +2,13 @@ import React from 'react'
 
 
 import { Button } from '@material-ui/core'
-import  Hiden  from './Hiden'
+
 
 
 
 export const HomeScreen = () => {
     
     
-
     return (
         <div>
             <h1>Home</h1>
@@ -23,9 +22,6 @@ export const HomeScreen = () => {
               Boton
             </Button>
 
-            <Hiden/>
-
-            
         </div>
     )
 }
