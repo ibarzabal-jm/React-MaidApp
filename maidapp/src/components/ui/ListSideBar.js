@@ -17,7 +17,7 @@ export const ListSideBar = () => {
             <List component="nav">
                 <ListItem button>
                     <ListItemIcon> <DeckIcon/> </ListItemIcon>
-                    <ListItemText primary='Mi primer elemento'/>
+                    <ListItemText primary='Mi perfil'/>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon> <Cloud /> </ListItemIcon>
@@ -26,7 +26,7 @@ export const ListSideBar = () => {
                 <Divider></Divider>
                 <ListItem button>
                     <ListItemIcon> <Cloud /> </ListItemIcon>
-                    <ListItemText primary='Mi elemento separado'/>
+                    <ListItemText primary='Datos personales'/>
                 </ListItem>
             </List>
         </div>
