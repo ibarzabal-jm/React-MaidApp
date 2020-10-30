@@ -8,6 +8,12 @@ import logo from '../../images/logo-iuly.png';
 const drawerWidth = 240;
 
 const useStyle = makeStyles( theme => ({
+    appBar: {
+        [theme.breakpoints.up('sm')]:{
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,    
+        }
+    },
     menuButton:{
         flexGrow: 1,
         marginRight: theme.spacing(2),
@@ -15,15 +21,12 @@ const useStyle = makeStyles( theme => ({
             display:'none',
         },
     },
+    navButton:{
+        marginRight: theme.spacing(1)
+    },
     title:{
         flexGrow: 1,
     },
-    appBar: {
-        [theme.breakpoints.up('sm')]:{
-            width: `calc(100% - ${drawerWidth}px)`,
-            marginLeft: drawerWidth,    
-        }
-    }
 }))
 
 export const Navbar = ({handleToggle}) => {
@@ -42,8 +45,11 @@ export const Navbar = ({handleToggle}) => {
                             <img alt="logo-iULY" style={{ width:"100px", height : "40px", marginRight : "0.5rem" }} src={logo}></img>
                 </Link>
 
-                <Button variant="contained" color="primary">
-                    Login
+                <Button variant="contained" color="primary" className={ classes.navButton }>
+                    Ingresar
+                </Button>
+                <Button variant="contained" color="primary" className={ classes.navButton }>
+                    Registro
                 </Button>
             </Toolbar>
         </AppBar>
