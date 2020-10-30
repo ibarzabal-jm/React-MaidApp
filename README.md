@@ -14,8 +14,8 @@ _Cosas hechas:_
 
 _Este proyecto se realizó con las siguientes herramientas:_
 
-* [React.Js] - Liberería para el desarrollo del Frontend.
-* [MDBootstrap](https://mdbootstrap.com/docs/react/) - Darle un estilo a la página.
+* [React.Js](https://es.reactjs.org/) - Liberería para el desarrollo del Frontend.
+* [Material-ui](https://material-ui.com/) - Framework para el estilo a la página.
 * [Node.Js] - Para el backend.
 * [Express.Js] - Framework para el backend.
 
