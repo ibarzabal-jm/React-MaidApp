@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 export const AppRouter = () => {
 
     const classes = useStyles();
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const handleToggle = () =>{
         setOpen(!open);
@@ -43,7 +43,7 @@ export const AppRouter = () => {
         <Router>
             <div className={classes.root} >
                 <Navbar handleToggle={handleToggle}/>
-                <Hidden xsDown>
+                <Hidden mdDown>
                     <SideBar variant="permanent"
                              open={true}
                     />
