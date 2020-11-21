@@ -12,9 +12,7 @@ const useStyles = makeStyles((theme) => ({
     box: {
         height:"100vh",
         background: `linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ), no-repeat center center, url(${fondo})`,
-        backgroundSize:'cover',
-
-        
+        backgroundSize:'cover',        
     },
     title:{
         color: "white",
