@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import IconCard from './IconCard'
 
 const useStyles = makeStyles( (theme) => ({
     root: {
@@ -50,9 +51,11 @@ const Contratanos = () => {
             {
                 beneficios.map(( {title, text, icon} ) =>(
                     <Grid item xs={4} md={3} key={title} className={classes.beneficios} >
-                        {icon}
-                        <Typography variant="h5">{title}</Typography>
-                        <Typography variant="body1">{text}</Typography>
+                        <IconCard
+                                title={title}
+                                text={text}
+                                icon={icon}
+                        />
                     </Grid>
                 ))
             }
