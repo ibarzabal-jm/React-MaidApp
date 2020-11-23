@@ -1,6 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faShieldAlt } from '@fortawesome/free-solid-svg-icons'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { faHistory } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { faWallet } from '@fortawesome/free-solid-svg-icons'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 
 import fondo from '../../../images/limpiar.jpeg'
@@ -25,27 +30,28 @@ const JoinUs = () => {
     const beneficios = [ 
         {   title:'Velocidad',
             text:'Buscá trabajo de manera inmediata' , 
-            icon: <FontAwesomeIcon icon={faCoffee} /> ,
+            icon: <FontAwesomeIcon  size="3x" icon={faClock} /> ,
         },
         {   title:'Seguridad',
             text:'Te brindamos la mejor covertura de salud y seguridad' , 
-            // icon: <DesktopMacIcon style={{ color: "white" }}/> ,  
+            icon: <FontAwesomeIcon size="lg" icon={faShieldAlt} /> ,
         },
         {   title:'Historial',
             text:'Conocé el historial de tu empleador a través de su perfil y evaluaciones iULY' , 
-            // icon: <StorageIcon style={{ color: "white" }} /> ,
+            icon: <FontAwesomeIcon size="lg" icon={faClock} /> ,
         },
         {   title:'Organizacion',
             text:'Podrás gestionar y organizar tus trabajos y actividades' , 
-            // icon: <StorageIcon style={{ color: "white" }} /> ,
+            icon: <FontAwesomeIcon size="lg" icon={faCalendarCheck} /> ,
+
         },
         {   title:'Gratuito',
             text:'Registro totalmente gratuito' , 
-            // icon: <StorageIcon style={{ color: "white" }} /> ,
+            icon: <FontAwesomeIcon size="lg" icon={faDollarSign} /> ,
         },
         {   title:'Versatil',
             text:'Podrás elegir la forma de cobrar según tu conveniencia, Efectivo, Tarjeta o MercadoPago' , 
-            // icon: <StorageIcon style={{ color: "white" }} /> ,
+            icon: <FontAwesomeIcon size="lg" icon={faWallet} /> ,
         },
 
     ]
