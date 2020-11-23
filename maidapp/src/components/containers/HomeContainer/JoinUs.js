@@ -4,16 +4,17 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 
 import fondo from '../../../images/limpiar.jpeg'
+import IconCard from './IconCard'
 
 const useStyles = makeStyles( (theme) => ({
     root: {
-        height:"100vh",
         background: `linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ), no-repeat center center, url(${fondo})`,
         backgroundSize:'cover', 
+        color:'white',
     },
     beneficios: {
         display:'flex',
-
+        padding: theme.spacing(5),
     },
 }))
 
@@ -50,28 +51,31 @@ const JoinUs = () => {
     ]
 
     return (
-        <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            alignContent="center"
-
-            className={classes.root}
-        >
-            <Grid item xs={12}>
-                <Typography variant="h3" align="center"> Se parte de Nuestro Servicio</Typography>
+        <>
+            <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="flex-start"
+                alignContent="center"
+                className={classes.root}
+            >
+                <Grid item xs={12}>
+                    <Typography variant="h3" align="center" color="inherit"> Se parte de Nuestro Servicio</Typography>
+                </Grid>
+                {
+                    beneficios.map(( {title,text, icon} ) =>(
+                        <Grid item xs={4} md={3} key={title} className={classes.beneficios} >
+                            <IconCard
+                                title={title}
+                                text={text}
+                                icon={icon}
+                            />
+                        </Grid>
+                    ))
+                }
             </Grid>
-            {
-                beneficios.map(( {title, text, icon} ) =>(
-                    <Grid item xs={4} md={3} key={title} className={classes.beneficios} >
-                        {icon}
-                        <Typography variant="h5">{title}</Typography>
-                        <Typography variant="body1">{text}</Typography>
-                    </Grid>
-                ))
-            }
-        </Grid>
+        </>
     )
 }
 
