@@ -1,27 +1,27 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Typography from '@material-ui/core/Typography';
-import { CardMedia, makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 
 
 const useStyles = makeStyles( (theme)=> ({
     root:{
-        borderRadius: '8px',
-        height: '100%',
-    },
-    cardTitle:{
-        backgroundColor: theme.palette.primary.main,
-        color: '#fff',
-        borderBottom:'1px solid black',
+        display:'flex',
+        flexFlow:'column wrap',
+        justifyContent:'center',
+        alignItems:'center',
         textAlign:'center',
-
+        borderRadius: '8px',
+        border: '3px solid white'
+        
     },
-    cardContent:{
-        height:'100%',
-    }
+    icon: {
+        alignSelf:'flex-start center',
+        padding: theme.spacing(2),
+    },
+    title:{
+        color: '#fff',
+        padding: theme.spacing(2),
+        textAlign:'center',
+    },
   
 }) )
 
@@ -29,13 +29,11 @@ const IconCard = ({title, text, icon}) => {
     const classes = useStyles();
     return (
         <>
-            <Card className={classes.root} variant="outlined">
-                <CardHeader title={title} subheader={icon} className={classes.cardTitle} >
-                </CardHeader>
-                <CardContent className={classes.cardContent} >
-                    <Typography variant="body1">{text}</Typography>
-                </CardContent>
-            </Card>
+            <div className={classes.root}>
+                <div className={classes.icon}>{icon}</div>
+                <div className={classes.title}>{title} <hr/></div>
+                <div>{text}</div>
+            </div>
         </>
     )
 }
