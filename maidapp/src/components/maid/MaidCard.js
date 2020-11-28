@@ -83,11 +83,16 @@ const MaidCard = ({ maid }) => {
                <div className={classes.title}>
                    {nombre}
                </div>
-               <ul>
-                   <li>{nacionalidad}</li>
-                   <li>{edad}</li>
-                   <li>{modalidad}</li>
-               </ul>
+               <Grid container>
+                   <Grid item xs={6}></Grid>
+                   <Grid item xs={6}>
+                        <ul>
+                            <li>{nacionalidad}</li>
+                            <li>{edad}</li>
+                            <li>{modalidad}</li>
+                        </ul>
+                   </Grid>
+               </Grid>
                <div className={classes.datos}>
                    {valoracion}
                </div>
