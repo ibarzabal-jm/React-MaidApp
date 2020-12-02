@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles( (theme)=> ({
     root: {
         backgroundColor:'pink',
+        width:'100%'
         
     }  
 }) )
@@ -29,6 +30,7 @@ const mucamas = [
         nombre: 'fasfas',
         nacionalidad: 'argentina',
         modalidad: 'Cama Adentro',
+        img: 'https://placekitten.com/408/287',
         edad: 30,
         alta: 'Abril 2020',
         update: new Date(),
