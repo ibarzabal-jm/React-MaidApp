@@ -1,10 +1,8 @@
 import React from 'react'
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Avatar, CardHeader, makeStyles } from '@material-ui/core';
+import {  makeStyles } from '@material-ui/core';
 
 
 const useStyles = makeStyles( (theme) => ({
@@ -17,18 +15,32 @@ const useStyles = makeStyles( (theme) => ({
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)',
         display: 'flex',
         flexDirection: 'column',
+        alignContent:'center',
+
+
+        transitionDuration: '0.4s',
+        transitionProperty: 'transform',
+        '&:hover': {
+            transform: 'scale(1.1)',
+        }
     },
     headerStart: {
         backgroundColor:'cyan',
         width: '100%',
-        height: '160px',
+        height: '100px',
+   
+    },
+    valoracion: {
+        display: 'flex',
+        justifyContent:'flex-end',
+
     },
     avatar:{
         zIndex: 100,
         width: '120px',
         height: '120px',
         position: 'relative',
-        marginTop: '-75px',
+        marginTop: '-65px',
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -37,8 +49,8 @@ const useStyles = makeStyles( (theme) => ({
         transitionDuration: '0.4s',
         transitionProperty: 'transform',
         '&:hover':{
-            transform: 'scale(2.2)',
-            border:'3px solid black'
+            transform: 'scale(1.2)',
+            border:'6px solid orange'
         }
     },
     title :{
@@ -55,6 +67,13 @@ const useStyles = makeStyles( (theme) => ({
     footer: {
         backgroundColor:'cyan',
         height:'50px',
+        display:'flex',
+    },
+    cardButton: {
+        backgroundColor: 'green',
+        color:'white',
+        alignSelf:'center'
+
     }
 }) )
 
@@ -70,6 +89,8 @@ const MaidCard = ({ maid }) => {
         trabajos,
         alta,
         update,
+        cantidadTrabajos,
+        referencias,
         valoracion
     } = maid
 
@@ -77,8 +98,10 @@ const MaidCard = ({ maid }) => {
     
     return (
         <div className={classes.card}>
-           <div className={classes.headerStart}></div>
-           <img className={classes.avatar} src={img}></img>
+           <div className={classes.headerStart}>
+               <div className={classes.valoracion}>Valoracion</div>
+           </div>
+           <img className={classes.avatar} src={img} alt={nombre}></img>
            <div className={classes.content}>
                <div className={classes.title}>
                    {nombre}
@@ -95,11 +118,19 @@ const MaidCard = ({ maid }) => {
                </Grid>
                <div className={classes.datos}>
                    {valoracion}
+                   {cantidadTrabajos}
+                   {referencias}
                </div>
            </div>
 
            <div className={classes.footer}>
-
+               <Button 
+                variant="contained"
+                color="default"
+                className={ classes.cardButton }
+               >
+                   Contactar
+               </Button>
            </div>
 
 
