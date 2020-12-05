@@ -10,7 +10,6 @@ const useStyles = makeStyles( (theme)=> ({
     root: {
         backgroundColor:'pink',
         width:'100%'
-        
     }  
 }) )
 
@@ -41,32 +40,33 @@ export const MaidList = () => {
     const classes = useStyles();
 
     return (
-        <Grid container
-            alignContent="center"
-            alignItems="center"
-            justify="center"
-            direction="row"
-            spacing={4}
-        
-            className={classes.root}
-        >
-            <Grid item xs={12}>
-                
-                <Typography variant="h3" align="center" > Nuestras iULY's</Typography>
-                
+
+        <div className={classes.root}>
+            <Grid container
+                alignContent="center"
+                alignItems="center"
+                justify="center"
+                direction="row"
+                spacing={4}
+            >
+                <Grid item xs={12}>
+                    
+                    <Typography variant="h3" align="center" > Nuestras iULY's</Typography>
+                    
+                </Grid>
+    
+                {
+                    mucamas.map( (mucama) =>(
+    
+                        <Grid item xs={4} >
+                            <MaidCard
+                                maid={mucama}
+                            />
+                        </Grid>
+                    )
+                    )
+                }
             </Grid>
-
-            {
-                mucamas.map( (mucama) =>(
-
-                    <Grid item xs={4} >
-                        <MaidCard
-                            maid={mucama}
-                        />
-                    </Grid>
-                )
-                )
-            }
-        </Grid>
+        </div>
     )
 }
