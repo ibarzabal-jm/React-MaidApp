@@ -68,6 +68,7 @@ const useStyles = makeStyles( (theme) => ({
         backgroundColor:'cyan',
         height:'50px',
         display:'flex',
+        justifyContent:'center', 
     },
     cardButton: {
         backgroundColor: 'green',
