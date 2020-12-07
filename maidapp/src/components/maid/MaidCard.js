@@ -1,7 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import {  makeStyles } from '@material-ui/core';
 
 
@@ -81,15 +80,11 @@ const useStyles = makeStyles( (theme) => ({
 const MaidCard = ({ maid }) => {
 
     const {
-        id,
         nombre,
         edad,
         nacionalidad,
         img,
         modalidad,
-        trabajos,
-        alta,
-        update,
         cantidadTrabajos,
         referencias,
         valoracion
