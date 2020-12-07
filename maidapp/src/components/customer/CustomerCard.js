@@ -1,7 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import {  makeStyles } from '@material-ui/core';
 
 
@@ -68,8 +67,11 @@ const useStyles = makeStyles( (theme) => ({
         backgroundColor:'cyan',
         height:'50px',
         display:'flex',
+        justifyContent:'center',
+        alignContent:'center',
     },
     cardButton: {
+        display:'flex',
         backgroundColor: 'green',
         color:'white',
         alignSelf:'center'
@@ -80,19 +82,15 @@ const useStyles = makeStyles( (theme) => ({
 const CustomerCard = ({ customer }) => {
 
     const {
-        id,
         nombre,
         edad,
         nacionalidad,
         img,
         modalidad,
-        trabajos,
-        alta,
-        update,
         cantidadTrabajos,
         referencias,
         valoracion
-    } = maid
+    } = customer
 
     const classes = useStyles();
     
