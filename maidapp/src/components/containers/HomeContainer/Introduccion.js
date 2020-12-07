@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 
-export const Introduccion = () => {
+const Introduccion = () => {
     return (
         <Grid container>
             <Grid item xs={12}>
@@ -22,3 +22,5 @@ export const Introduccion = () => {
         </Grid>
     )
 }
+
+export default Introduccion
