@@ -6,16 +6,15 @@ import {  makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles( (theme) => ({
     card: {
-        fontFamily: ' Candara, sans-serif',
-        maxWidth: '340px',
-        overflow: 'hidden',
+        alignContent:'center',
         background: '#fff',
         borderRadius: '10px',
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)',
         display: 'flex',
         flexDirection: 'column',
-        alignContent:'center',
-
+        fontFamily: ' arial, sans-serif',
+        overflow: 'hidden',
+        maxWidth: '340px',
 
         transitionDuration: '0.4s',
         transitionProperty: 'transform',
@@ -55,7 +54,9 @@ const useStyles = makeStyles( (theme) => ({
     title :{
         zIndex:200,
         textAlign:'center',
+        textTransform:'uppercase',
         textDecoration:'',
+        color: theme.palette.secondary.main,
         fontSize: '25px',
     },
     desc : {
@@ -65,14 +66,17 @@ const useStyles = makeStyles( (theme) => ({
     },
     footer: {
         backgroundColor:'cyan',
-        height:'50px',
         display:'flex',
         justifyContent:'center', 
     },
     cardButton: {
         backgroundColor: 'green',
         color:'white',
-        alignSelf:'center'
+        alignSelf:'center',
+
+        '&:hover':{
+            backgroundColor:'black'
+        }
 
     }
 }) )
@@ -87,6 +91,7 @@ const MaidCard = ({ maid }) => {
         modalidad,
         cantidadTrabajos,
         referencias,
+        residencia,
         valoracion
     } = maid
 
@@ -96,6 +101,7 @@ const MaidCard = ({ maid }) => {
         <div className={classes.card}>
            <div className={classes.headerStart}>
                <div className={classes.valoracion}>Valoracion</div>
+               <div className={classes.mas} > Denunciar </div>
            </div>
            <img className={classes.avatar} src={img} alt={nombre}></img>
            <div className={classes.content}>
@@ -104,31 +110,43 @@ const MaidCard = ({ maid }) => {
                </div>
                <Grid container>
                    <Grid item xs={6}></Grid>
-                   <Grid item xs={6}>
+                   <Grid item xs={6} className={classes.datos}>
                         <ul>
-                            <li>{nacionalidad}</li>
-                            <li>{edad}</li>
-                            <li>{modalidad}</li>
+                            <li>Edad: {edad} años</li>
+                            <li>Nacionalidad: {nacionalidad}</li>
+                            <li>Residencia: {residencia}</li>
+                            <li>Fecha Alta: {alta}</li>
+                            <hr></hr>
+                            <li>Modalidad: {modalidad}</li>
+                            <li>Ultima actualizacion: {actualizacion}</li>
                         </ul>
                    </Grid>
                </Grid>
-               <div className={classes.datos}>
+               <Grid
+                    container
+                    direction="column" 
+                    alignItems="center"
+                    className={classes.stats}
+                >
                    {valoracion}
                    {cantidadTrabajos}
                    {referencias}
-               </div>
+               </Grid>
            </div>
 
-           <div className={classes.footer}>
-               <Button 
-                variant="contained"
-                color="default"
-                className={ classes.cardButton }
-               >
-                   Contactar
-               </Button>
-           </div>
-
+           
+            <Grid container className={classes.footer}>
+                <Grid item xs={12}>
+                    <Button 
+                    variant="contained"
+                    color="default"
+                    className={ classes.cardButton }
+                    >
+                        Contactar
+                    </Button>
+                </Grid>
+            </Grid>
+           
 
         </div>
     )
