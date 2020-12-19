@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {Link as Linkito} from 'react-router-dom';
 
 import { Copyright } from '../ui/Copyright'
 
@@ -106,7 +107,7 @@ export default function LoginScreen() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link  component={Linkito} to={'register'} variant="body2">
                   {"No tenés cuenta? Registrate"}
                 </Link>
               </Grid>
