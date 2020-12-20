@@ -122,6 +122,16 @@ const MaidCard = ({ maid }) => {
                         </ul>
                    </Grid>
                </Grid>
+               <Grid container
+                    alignItems="center"
+               >
+                   <ul>
+                       <li>Limpieza</li>
+                       <li>Niños</li>
+                       <li>Ancianos</li>
+                       <li>Cocina</li>
+                   </ul>
+               </Grid>
                <Grid
                     container
                     direction="column" 
@@ -136,7 +146,10 @@ const MaidCard = ({ maid }) => {
 
            
             <Grid container className={classes.footer}>
-                <Grid item xs={12}>
+                <Grid item xs={8} className={classes.iconscontainer}>
+
+                </Grid>
+                <Grid item xs={4}>
                     <Button 
                     variant="contained"
                     color="default"
